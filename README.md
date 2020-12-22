@@ -12,3 +12,6 @@ _Needed tools:_
   This tool can download streams from multiple platforms. It can also save the stream from the beginning.
   - **ffmpeg** _(optional)_  
   This tool can convert the downloaded TS (transport stream) file to mp4. TS file could be played by a video player however playing from given position will not work.
+
+## downsize.sh
+This script reduces the size and quality in current directory.
