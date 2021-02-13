@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Encrypts a file with openssl
+
+if [ "$1" == "" ]
+then
+	echo "Usage: myencrypt inputfile [outputfile]"
+	exit
+else
+	fin="$1"
+fi
+
+if [ "$2" == "" ]
+then
+	fout="$1.enc"
+else
+	fout="$2"
+fi
+
+openssl des3 -pbkdf2 -in $fin -out $fout
+

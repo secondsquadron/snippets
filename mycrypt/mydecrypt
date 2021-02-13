@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Decrypts a file with openssl
+
+if [ "$1" == "" ]
+then
+	echo "Usage: mydecrypt inputfile [outputfile]"
+	exit
+else
+	fin="$1"
+fi
+
+if [ "$2" == "" ]
+then
+	fout=`echo $1 | sed -e 's/.enc//'`
+else
+	fout="$2"
+fi
+
+openssl des3 -d -pbkdf2 -in $fin -out $fout
+
